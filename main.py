@@ -48,7 +48,7 @@ async def on_ready():
     for member in guild.members:
       cursor.execute(f"SELECT id FROM users where id = {member.id}")
       if cursor.fetchone() == None:
-        cursor.execute(f"INSERT INTO users VALUES ({member.id}, '{member.name}',0)")
+        cursor.execute(f"INSERT INTO users VALUES ({member.id}, '{member.name}',100000)")
       else:
         pass
       conn.commit()
