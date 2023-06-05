@@ -17,7 +17,8 @@ with open("prefix.txt") as f:
 conn = sqlite3.connect("database")
 cursor = conn.cursor()
 
-'''cursor.execute(""" 
+try:
+  cursor.execute(""" 
   CREATE TABLE "users"(
     "id" INT,
     "nickname" TEXT,
@@ -25,15 +26,15 @@ cursor = conn.cursor()
     )
   """)
 
-cursor.execute(
+  cursor.execute(
   """ 
   CREATE TABLE "shop"(
     "id" INT,
     "cost" INT
     )
-  """
-  )
-'''
+  """)
+except:
+  pass
 
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix = prefix, intents = intents)
