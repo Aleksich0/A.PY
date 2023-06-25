@@ -129,5 +129,12 @@ async def bal(ctx):
         n += 1
     await ctx.send(embed = embedVar)
 
+@bot.tree.command(name="ping")
+@app_commands.checks.cooldown(1, 30)
+async def ping(interaction: discord.Interaction):
+    await interaction.response.send_message("pong!")
+
+
+
 if __name__ == "__main__":
         bot.run(token)
