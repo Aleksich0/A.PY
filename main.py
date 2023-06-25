@@ -2,6 +2,7 @@ import discord
 import sqlite3
 import json
 
+from discord import app_commands
 from discord.ext import commands
 from random import choice, randint
 from time import sleep
